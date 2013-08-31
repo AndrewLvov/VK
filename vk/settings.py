@@ -1,4 +1,5 @@
 # Django settings for vk project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -19,6 +20,8 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+PROJECT_PATH = os.path.dirname(__file__)
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
@@ -104,6 +107,7 @@ ROOT_URLCONF = 'vk.urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
+    os.path.join(PROJECT_PATH, 'html'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
