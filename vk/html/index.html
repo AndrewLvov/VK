@@ -1,6 +1,11 @@
-<h1>Hello</h1>
+<!--redirect_uri={{ request.build_absolute_uri }}&amp;-->
 <a href="https://oauth.vk.com/authorize?
 client_id={{ app_id }}&amp;
 scope={{ settings }}&amp;
-redirect_uri={{ request.build_absolute_uri }}&amp;
-response_type=code">Authorize</a>
+redirect_uri=https://oauth.vk.com/blank.html&amp;
+response_type=token">Authorize</a>
+
+<h1>Missing Friends ({{ friends|length }})</h1>
+{% for f in friends %}
+  {{ f }}<br/>
+{% endfor %}
